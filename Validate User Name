@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class ValidateUsername {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the user name: ");
+        String username = scanner.next();
+        System.out.print("Reenter the user name: ");
+        String reusername = scanner.next();
+
+        if (username.equals(reusername)) {
+            System.out.println("User name is Valid");
+        } else {
+            System.out.println("User name is Invalid");
+        }
+    }
+}
