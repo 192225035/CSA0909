@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class R192225035{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a decimal number:\n");
+        int decimal = scanner.nextInt();
+        String binary = "";
+        while (decimal > 0) {
+            int remainder = decimal % 2;
+            binary = (remainder == 0 ? "0" : "1") + binary;
+            decimal = decimal / 2;
+        }
+        System.out.println("The binary equivalent of the decimal number is=" + binary);
+    }
+}
