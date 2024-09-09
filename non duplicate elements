@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        // Get the number of elements in the array from the user
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of elements in array: ");
+        int numElements = scanner.nextInt();
+
+        // Get the elements from the user
+        int[] array = new int[numElements];
+        for (int i = 0; i < numElements; i++) {
+            System.out.print("Enter element" + (i + 1) + ": ");
+            array[i] = scanner.nextInt();
+        }
+
+        // Remove duplicates
+        Set<Integer> set = new LinkedHashSet<>();
+        for (int element : array) {
+            set.add(element);
+        }
+
+        // Print the result
+        System.out.println("Non-duplicate items:");
+        System.out.print("[");
+        int i = 0;
+        for (Integer element : set) {
+            System.out.print(element);
+            if (i < set.size() - 1) {
+                System.out.print(", ");
+            }
+            i++;
+        }
+        System.out.println("]");
+    }
+}
