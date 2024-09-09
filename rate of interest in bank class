@@ -1,0 +1,49 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Main {
+   public static void main(String[] args) {
+       Map<String, Bank> banks = new HashMap<>();
+
+       Scanner scanner = new Scanner(System.in);
+
+       System.out.println("Enter the number of banks:");
+       int numBanks = scanner.nextInt();
+
+       for (int i = 0; i < numBanks; i++) {
+           System.out.println("Enter the name of bank " + (i + 1) + ":");
+           String bankName = scanner.next();
+
+           System.out.println("Enter the interest rate of bank " + (i + 1) + ":");
+           double interestRate = scanner.nextDouble();
+
+           banks.put(bankName, new Bank(bankName, interestRate));
+       }
+
+       System.out.println("Enter the name of the bank to get the interest rate:");
+       String bankName = scanner.next();
+
+       Bank bank = banks.get(bankName);
+
+       if (bank != null) {
+           System.out.println("The interest rate of " + bankName + " is " + bank.getInterestRate());
+       } else {
+           System.out.println("Bank not found");
+       }
+   }
+}
+
+class Bank {
+   private String name;
+   private double interestRate;
+
+   public Bank(String name, double interestRate) {
+       this.name = name;
+       this.interestRate = interestRate;
+   }
+
+   public double getInterestRate() {
+       return interestRate;
+   }
+}
