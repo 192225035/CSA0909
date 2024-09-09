@@ -1,0 +1,37 @@
+class MultiplicationTableThread extends Thread {
+    private int number;
+
+    public MultiplicationTableThread(int number) {
+        this.number = number;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Multiplication table for " + number + ":");
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(number + " X " + i + " = " + (number * i));
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) throws InterruptedException {
+        MultiplicationTableThread thread1 = new MultiplicationTableThread(5);
+        MultiplicationTableThread thread2 = new MultiplicationTableThread(10);
+
+        System.out.println("Thread 1 state before start: " + thread1.getState());
+        System.out.println("Thread 2 state before start: " + thread2.getState());
+
+        thread1.start();
+        thread2.start();
+
+        System.out.println("Thread 1 state after start: " + thread1.getState());
+        System.out.println("Thread 2 state after start: " + thread2.getState());
+
+        thread1.join();
+        thread2.join();
+
+        System.out.println("Thread 1 state after finish: " + thread1.getState());
+        System.out.println("Thread 2 state after finish: " + thread2.getState());
+    }
+}
