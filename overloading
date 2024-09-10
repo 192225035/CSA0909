@@ -1,0 +1,22 @@
+public class R192225035 {
+    public static int sum(int... numbers) {
+        int sum = 0;
+        for (int number : numbers) {
+            sum += number;
+        }
+        return sum;
+    }
+    public static double sum(double... numbers) {
+        double sum = 0;
+        for (double number : numbers) {
+            sum += number;
+        }
+        return sum;
+    }
+    public static void main(String[] args) {
+        System.out.println("Sum of integers: " + sum(1, 2, 3, 4, 5));
+        System.out.println("Sum of doubles: " + sum(1.1, 2.2, 3.3, 4.4, 5.5));
+        System.out.println("Sum of no numbers: " + sum());
+        System.out.println("Sum of a single number: " + sum(10));
+    }
+}
