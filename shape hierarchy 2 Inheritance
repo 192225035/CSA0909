@@ -1,0 +1,104 @@
+class Shape {
+    private String color;
+
+    public Shape(String color) {
+        this.color = color;
+    }
+    public String getColor() {
+        return color;
+    }
+    public void displayShape() {
+        System.out.println("Color: " + color);
+    }
+    public double getArea() {
+        return 0.0;
+    }
+    public double getPerimeter() {
+        return 0.0;
+    }
+}
+class Circle extends Shape {
+    private double radius;
+
+    public Circle(String color, double radius) {
+        super(color);
+        this.radius = radius;
+    }
+    public double getRadius() {
+        return radius;
+    }
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+    public double getPerimeter() {
+        return 2 * Math.PI * radius;
+    }
+    public void displayCircle() {
+        super.displayShape();
+        System.out.println("Radius: " + radius);
+        System.out.println("Area: " + getArea());
+        System.out.println("Perimeter: " + getPerimeter());
+    }
+}
+class Square extends Shape {
+    private double side;
+    public Square(String color, double side) {
+        super(color);
+        this.side = side;
+    }
+    public double getSide() {
+        return side;
+    }
+    public double getArea() {
+        return side * side;
+    }
+    public double getPerimeter() {
+        return 4 * side;
+    }
+    public void displaySquare() {
+        super.displayShape();
+        System.out.println("Side: " + side);
+        System.out.println("Area: " + getArea());
+        System.out.println("Perimeter: " + getPerimeter());
+    }
+}
+class Triangle extends Shape {
+    private double base;
+    private double height;
+    public Triangle(String color, double base, double height) {
+        super(color);
+        this.base = base;
+        this.height = height;
+    }
+    public double getBase() {
+        return base;
+    }
+    public double getHeight() {
+        return height;
+    }
+    public double getArea() {
+        return 0.5 * base * height;
+    }
+    public double getPerimeter() {
+        return base + height + Math.sqrt(base * base + height * height);
+    }
+    public void displayTriangle() {
+        super.displayShape();
+        System.out.println("Base: " + base);
+        System.out.println("Height: " + height);
+        System.out.println("Area: " + getArea());
+        System.out.println("Perimeter: " + getPerimeter());
+    }
+}
+public class R192225035 {
+    public static void main(String[] args) {
+        Circle circle = new Circle("Red", 5.0);
+        circle.displayCircle();
+        System.out.println();
+        Square square = new Square("Blue", 4.0);
+        square.displaySquare();
+        System.out.println();
+        Triangle triangle = new Triangle("Green", 3.0, 4.0);
+        triangle.displayTriangle();
+    }
+}
