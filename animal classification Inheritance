@@ -1,0 +1,39 @@
+class Animal {
+    private String name;
+    private String habitat;
+    public Animal(String name, String habitat) {
+        this.name = name;
+        this.habitat = habitat;
+    }
+    public String getName() {
+        return name;
+    }
+    public String getHabitat() {
+        return habitat;
+    }
+    public void displayAnimal() {
+        System.out.println("Name: " + name);
+        System.out.println("Habitat: " + habitat);
+    }
+    public void eat() {
+        System.out.println("Eating...");
+    }
+    public void reproduce() {
+        System.out.println("Reproducing...");
+    }
+}
+class Mammal extends Animal {
+    public Mammal(String name, String habitat) {
+        super(name, habitat);
+    }
+    public void eat() {
+        System.out.println("Eating meat or plants...");
+    }
+    public void reproduce() {
+        System.out.println("Giving birth to live young...");
+    }
+    public void displayMammal() {
+        super.displayAnimal();
+        eat();
+        reproduce();
+    }
