@@ -1,0 +1,48 @@
+abstract class Animal {
+    abstract void eat();
+    abstract void sleep();
+
+    void sound() {
+        System.out.println("The animal makes a sound.");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void eat() {
+        System.out.println("The dog is eating dog food.");
+    }
+
+    @Override
+    void sleep() {
+        System.out.println("The dog is sleeping.");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void eat() {
+        System.out.println("The cat is eating cat food.");
+    }
+
+    @Override
+    void sleep() {
+        System.out.println("The cat is sleeping.");
+    }
+}
+
+public class R192225035 {
+    public static void main(String[] args) {
+        Animal[] animals = new Animal[2];
+
+        animals[0] = new Dog();
+        animals[1] = new Cat();
+
+        for (Animal animal : animals) {
+            animal.eat();
+            animal.sleep();
+            animal.sound();
+            System.out.println();
+        }
+    }
+}
