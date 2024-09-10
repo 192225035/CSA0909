@@ -1,0 +1,72 @@
+class Employee {
+    private String employeeId;
+    private String employeeName;
+    private double salary ;
+    public Employee(String employeeId, String employeeName, double salary) {
+        this.employeeId = employeeId;
+        this.employeeName = employeeName;
+        this.salary = salary;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void displayEmployee() {
+        System.out.println("Employee ID: " + employeeId);
+        System.out.println("Employee Name: " + employeeName);
+        System.out.println("Salary: $" + salary);
+    }
+}
+
+class Manager extends Employee {
+    private int teamSize;
+    public Manager(String employeeId, String employeeName, double salary, int teamSize) {
+        super(employeeId, employeeName, salary);
+        this.teamSize = teamSize;
+    }
+    public int getTeamSize() {
+        return teamSize;
+    }
+    public void manageTeam() {
+System.out.println("Managing a team of " + teamSize + " employees.");
+    }
+    public void displayManager() {
+        super.displayEmployee();
+        manageTeam();
+    }
+}
+class SalesPerson extends Employee {
+    private double salesAmount;
+    public SalesPerson(String employeeId, String employeeName, double salary, double salesAmount) {
+        super(employeeId, employeeName, salary);
+        this.salesAmount = salesAmount;
+    }
+    public double getSalesAmount() {
+        return salesAmount;
+    }
+    public void makeSale() {
+        System.out.println("Making a sale of $" + salesAmount + ".");
+    }
+    public void displaySalesPerson() {
+        super.displayEmployee();
+        makeSale();
+    }
+}
+public class R192225035 {
+    public static void main(String[] args) {
+        Manager manager = new Manager("M001", "John Doe", 100000, 5);
+        manager.displayManager();
+        System.out.println();
+        SalesPerson salesPerson = new SalesPerson("S001", "Jane Doe", 80000, 2000);
+        salesPerson.displaySalesPerson();
+    }
+}
