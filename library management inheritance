@@ -1,0 +1,94 @@
+class Item {
+    private String title;
+    private String author;
+
+    public Item(String title , String author) {
+        this.title = title;
+        this.author = author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void displayItem() {
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+    }
+}
+
+// Child class: Book
+class Book extends Item {
+    private int pages;
+
+    public Book(String title, String author, int pages) {
+        super(title, author);
+        this.pages = pages;
+    }
+
+    public int getPages() {
+        return pages;
+    }
+
+    public void displayBook() {
+        super.displayItem();
+        System.out.println("Pages: " + pages);
+    }
+
+    public void borrowBook() {
+        System.out.println("Borrowing book...");
+    }
+
+    public void returnBook() {
+        System.out.println("Returning book...");
+    }
+}
+
+// Child class: DVD
+class DVD extends Item {
+    private int runtime;
+
+    public DVD(String title, String author, int runtime) {
+        super(title, author);
+        this.runtime = runtime;
+    }
+
+    public int getRuntime() {
+        return runtime;
+    }
+
+    public void displayDVD() {
+        super.displayItem();
+        System.out.println("Runtime: " + runtime + " minutes");
+    }
+
+    public void borrowDVD() {
+        System.out.println("Borrowing DVD...");
+    }
+
+    public void returnDVD() {
+        System.out.println("Returning DVD...");
+    }
+}
+
+public class R192225035 {
+    public static void main(String[] args) {
+        // Create book
+        Book book = new Book("Java Programming", "John Smith", 500);
+        book.displayBook();
+        book.borrowBook();
+        book.returnBook();
+
+        System.out.println();
+
+        // Create DVD
+        DVD dvd = new DVD("The Shawshank Redemption", "Frank Darabont", 142);
+        dvd.displayDVD();
+        dvd.borrowDVD();
+        dvd.returnDVD();
+    }
+}
