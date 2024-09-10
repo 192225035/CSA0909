@@ -1,0 +1,38 @@
+class Game {
+    private String title;
+    private String genre;
+
+    public Game(String title, String genre) {
+        this.title = title;
+        this.genre = genre;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void displayGame() {
+        System.out.println("Title: " + title);
+        System.out.println("Genre: " + genre);
+    }
+}
+class ActionGame extends Game {
+    private int levels;
+
+    public ActionGame(String title, String genre, int levels) {
+        super(title, genre);
+        this.levels = levels;
+    }
+
+    public int getLevels() {
+        return levels;
+    }
+
+    public void displayActionGame() {
+        super.displayGame();
+        System.out.println("Levels: " + levels);
+    }
