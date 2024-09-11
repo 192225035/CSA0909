@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class R192225035 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+        System.out.print("Enter a character or substring to search for: ");
+        String searchQuery = scanner.nextLine();
+
+        int index = inputString.indexOf(searchQuery);
+
+        if (index != -1) {
+            System.out.println("The index of the character or substring is: " + index);
+        } else {
+            System.out.println("The character or substring was not found in the string.");
+        }
+    }
+}
