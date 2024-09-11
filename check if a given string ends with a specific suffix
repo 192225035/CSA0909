@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class R192225035 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String str = scanner.next();
+        System.out.println("Enter a suffix: ");
+        String suffix = scanner.next();
+        boolean endsWithSuffix = str.endsWith(suffix);
+        System.out.println("Does the string end with the suffix? " + endsWithSuffix);
+    }
+}
