@@ -1,0 +1,16 @@
+public class R192225035 {
+    public static void main(String[] args) {
+        String str1 = "Hello ";
+        String str2 = "World";
+        String result1 = str1 + " " + str2;
+        System.out.println("Using + operator: " + result1);
+        String result2 = str1.concat(" ").concat(str2);
+        System.out.println("Using concat() method: " + result2);
+        StringBuilder sb = new StringBuilder();
+        sb.append(str1);
+        sb.append(" ");
+        sb.append(str2);
+        String result3 = sb.toString();
+        System.out.println("Using StringBuilder: " + result3);
+    }
+}
