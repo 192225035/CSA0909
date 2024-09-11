@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class R192225035 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+        System.out.print("Enter a delimiter: ");
+        String delimiter = scanner.next();
+
+        String[] substrings = inputString.split(delimiter);
+
+        System.out.println("The substrings are:");
+        for (String substring : substrings) {
+            System.out.println(substring);
+        }
+    }
+}
