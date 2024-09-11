@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class R192225035 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = scanner.next();
+        char[] charArray = str.toCharArray();
+        System.out.println("Char array: ");
+        for (char c : charArray) {
+            System.out.print(c + " ");
+        }
+    }
+}
